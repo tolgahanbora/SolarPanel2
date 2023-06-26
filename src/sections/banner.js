@@ -50,6 +50,8 @@ const styles = {
     textAlign: 'center',
     pt: ['110px', null, null, null, '130px'],
     h2: {
+      mx: ['auto', null, null, null, '0'],
+    textAlign: 'center', // Add this line to center the text on all screen sizes
       fontSize: ['28px', null, null, '32px', '38px', '48px', '64px'],
       lineHeight: 1.25,
       color: '#02073E',

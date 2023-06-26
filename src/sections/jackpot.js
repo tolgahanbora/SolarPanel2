@@ -67,11 +67,14 @@ const styles = {
     flexWrap: 'wrap',
   },
   image: {
-    flex: ['0 0 100%', null, null, null, null, '0 0 62.5%'],
+    flex: ['0 0 100%', null, null, null, '0 0 61.5%'],
+    textAlign: ['center', null, null, null, null, 'right'],
     img: {
-      maxWidth: ['100%', null, null, null, null, null, 'none'],
-      float: 'right',
+      maxWidth: ['100%', null, null, null, null, null, '100%'],
+      height: 'auto',
       borderRadius: '30%',
+      display: 'block',
+      margin: '0 auto',
     },
     
   },
