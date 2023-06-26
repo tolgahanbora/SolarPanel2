@@ -10,6 +10,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@next/env": "^13.2.4",
     "framer-motion": "^2.7.5",
     "next": "9.5.3",
     "next-compose-plugins": "^2.2.0",
@@ -33,7 +34,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
-    "next-sitemap": "^1.1.6"
+    "next-sitemap": "^1.9.12"
   },
   "engines": {
     "node": "16.x"
