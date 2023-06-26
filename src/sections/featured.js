@@ -5,7 +5,9 @@ import BlockTitle from 'components/block-title';
 import Image from 'components/image';
 import { AiFillDollarCircle, AiFillPieChart } from 'react-icons/ai';
 import { FaBriefcase, FaCog } from 'react-icons/fa';
-import tabImage1 from 'assets/tab-image-1.png';
+import tabImage1 from 'assets/moneySave.png';
+import tabImage2 from 'assets/create.png';
+import tabImage3 from 'assets/view.png';
 import dotPattern from 'assets/dot-pattern.svg';
 
 const Featured = () => {
@@ -24,12 +26,6 @@ const Featured = () => {
       setTab({
         ...tab,
         active: 'adjust',
-      });
-    }
-    if (tab === 'report') {
-      setTab({
-        ...tab,
-        active: 'report',
       });
     }
     if (tab === 'create') {
@@ -59,22 +55,16 @@ const Featured = () => {
               onClick={() => handleTab('adjust')}
               className={`${tab.active === 'adjust' ? 'active' : ''}`}
             >
-              <FaCog />
+              <FaBriefcase />
+
               Create & adjust
-            </Button>
-            <Button
-              onClick={() => handleTab('report')}
-              className={`${tab.active === 'report' ? 'active' : ''}`}
-            >
-              <AiFillPieChart />
-              View Reports
             </Button>
             <Button
               onClick={() => handleTab('create')}
               className={`${tab.active === 'create' ? 'active' : ''}`}
             >
-              <FaBriefcase />
-              Create & adjust
+              <FaCog />
+              Finish & View
             </Button>
           </Box>
         </Box>
@@ -83,10 +73,10 @@ const Featured = () => {
             <Image src={tabImage1} alt="tab image" className="tabImage" />
           )}
           {tab.active === 'create' && (
-            <Image src={tabImage1} alt="tab image" className="tabImage" />
+            <Image src={tabImage3} alt="tab image" className="tabImage" />
           )}
           {tab.active === 'adjust' && (
-            <Image src={tabImage1} alt="tab image" className="tabImage" />
+            <Image src={tabImage2} alt="tab image" className="tabImage" />
           )}
           {tab.active === 'report' && (
             <Image src={tabImage1} alt="tab image" className="tabImage" />
@@ -189,6 +179,7 @@ const styles = {
     },
     '.tabImage': {
       position: 'relative',
+      borderRadius: '8%',
       animation: `${fadeIn} 0.8s linear`,
     },
   },

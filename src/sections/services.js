@@ -3,10 +3,10 @@ import { Box, Container, Grid } from 'theme-ui';
 import BlockTitle from 'components/block-title';
 import ServiceCard from 'components/cards/service-card';
 import serviceImage1 from 'assets/service-1.png';
-import serviceImage2 from 'assets/service-2.png';
+
 import serviceImage3 from 'assets/service-3.png';
-import serviceImage4 from 'assets/service-4.png';
-import serviceImage5 from 'assets/service-5.png';
+
+import serviceImage2 from 'assets/service-5.png';
 import serviceImage6 from 'assets/service-6.png';
 
 const SERVICES_DATA = [
@@ -14,52 +14,33 @@ const SERVICES_DATA = [
     image: serviceImage1,
     text:
       'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: '3D modeling & art',
+    heading: 'De leukste installateurs',
     path: '#',
   },
   {
     image: serviceImage2,
     text:
       'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Digital promotion',
+    heading: 'Altijd de beste deal',
     path: '#',
   },
   {
     image: serviceImage3,
     text:
       'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Business Enterprise',
+    heading: '0% btw voor zonnepanelen',
     path: '#',
   },
-  {
-    image: serviceImage4,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Marketing & advertising',
-    path: '#',
-  },
-  {
-    image: serviceImage5,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Ultimate development',
-    path: '#',
-  },
-  {
-    image: serviceImage6,
-    text:
-      'Get your info tests delivered at home collect a sample from the your progress tests.',
-    heading: 'Online support',
-    path: '#',
-  },
+ 
 ];
 const Services = () => {
   return (
     <Box as="section" id="services" sx={styles.services}>
       <Container>
-        <BlockTitle
-          title="What the features of product"
-          text="Features are highlighted here"
+        <BlockTitle 
+          title="Alles perfect geregeld"
+          text="De Glimlach van GoVolt
+          is altijd inbegrepen"
         />
         <Grid sx={styles.grid}>
           {SERVICES_DATA.map(({ image, text, heading, path }, index) => (

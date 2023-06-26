@@ -1,0 +1,126 @@
+import React from 'react';
+import { Box, Container, Flex, Image, Text, Heading } from 'theme-ui';
+import JackpotCard from 'components/cards/jackpot2-card';
+import jackpotImage from 'assets/person-near-alternative-energy-plant.jpg';
+import jackpotImage1 from 'assets/jackpot-1-1.png';
+import jackpotImage2 from 'assets/jackpot-1-2.png';
+
+const JACKPOT_DATA = [
+  {
+    image: jackpotImage1,
+    text:
+      'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
+    heading: 'Deskundig en oprecht',
+  },
+  {
+    image: jackpotImage2,
+    text:
+      'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
+    heading: 'Beste aanbod',
+  },
+  {
+    image: jackpotImage2,
+    text:
+      'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
+    heading: 'Stralende installatiedag',
+  },
+  {
+    image: jackpotImage2,
+    text:
+      'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
+    heading: 'Stralende installatiedag',
+  },
+
+];
+
+const Jackpot = () => {
+  return (
+    <Box as="section" sx={styles.jackpot}>
+      <Container>
+        <Flex sx={styles.flex}>
+          <Box sx={styles.content}>
+            <Box sx={styles.heading}>
+              <Text as="span">Core features</Text>
+              <Heading as="h3">Voltmaster geeft Energie!</Heading>
+            </Box>
+            <Box sx={styles.jackpotCardBox}>
+              {JACKPOT_DATA.map(({ image, heading, text }, index) => (
+                <JackpotCard
+                  image={image}
+                  heading={heading}
+                  text={text}
+                  key={index}
+      
+                />
+              ))}
+            </Box>
+          </Box>
+          <Box sx={styles.image}>
+            <Image src={jackpotImage} alt="jackpot image" />
+          </Box>
+        </Flex>
+      </Container>
+    </Box>
+  );
+};
+
+export default Jackpot;
+
+const styles = {
+  jackpot: {
+    pt: ['65px', null, null, null, '85px', null, '125px'],
+    
+  },
+  flex: {
+    flexWrap: 'wrap',
+    
+  },
+  image: {
+    flex: ['0 0 100%', null, null, null, null, '0 0 62.5%'],
+    textAlign: ['center', null, null, null, null, 'right'], // Hizalama güncellendi
+    img: {
+      maxWidth: ['100%', null, null, null, null, null, 'none'],
+      borderRadius: '30%',
+      display: 'block',
+      margin: '53px', // Görüntünün yatayda ortalanması için güncellendi
+    },
+
+  },
+  content: {
+    flex: ['0 0 100%', null, null, null, null, '0 0 37.5%'],
+    display: 'flex', // Yatayda hizalama yapabilmek için güncellendi
+    justifyContent: 'flex-end', // Sağa hizalama için güncellendi
+    flexDirection: 'column', // Dikey hizalama için güncellendi
+  },
+  heading: {
+    mb: '30px',
+    pt: '60px',
+    textAlign: ['center', null, null, null, null, 'left'],
+    pl: ['0', null, null, '30px'],
+    maxWidth: ['80%', null, null, '100%'],
+    mx: ['auto', null, null, '0'],
+    span: {
+      display: 'block',
+      fontSize: '18px',
+      color: 'primary',
+      fontWeight: 700,
+      lineHeight: 1,
+      mb: '20px',
+    },
+    
+    h3: {
+      color: '#0F2137',
+      fontSize: ['23px', null, null, null, '30px', '36px', '44px'],
+      maxWidth: ['100%', null, null, null, null, '90%', '100%'],
+      fontWeight: 700,
+      letterSpacing: '-1.5px',
+      lineHeight: 1.36,
+    },
+  
+  },
+  jackpotCardBox: {
+    display: ['grid', null, null, null, null, 'block'],
+    gridTemplateColumns: ['1fr', null, null, '1fr 1fr'],
+    
+  },
+};

@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
-import { Button, Box } from 'theme-ui';
+import { Button, Box, Flex } from 'theme-ui';
 import { Scrollbars } from 'react-custom-scrollbars';
 import Drawer from 'components/drawer';
 import { DrawerContext } from 'contexts/drawer/drawer.context';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { Link as ScrollLink } from 'react-scroll';
 import menuItems from './header.data';
+import submenu from './header.data';
 import Logo from 'components/logo';
-import logoDark from 'assets/logo-dark.svg';
+import logoDark from 'assets/Voltmaster.svg';
 
 const MobileDrawer = () => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -23,9 +24,13 @@ const MobileDrawer = () => {
     <Drawer
       width="320px"
       drawerHandler={
-        <Box sx={styles.handler}>
-          <IoMdMenu size="22px" />
-        </Box>
+        <Button sx={styles.drawerButton}>
+
+          <span sx={styles.buttonText}>Menu</span>
+
+          <IoMdMenu size="22px" sx={styles.icon} />
+
+        </Button>
       }
       open={state.isOpen}
       toggleHandler={toggleHandler}
@@ -37,25 +42,43 @@ const MobileDrawer = () => {
         <Box sx={styles.content}>
           <Logo image={logoDark} />
           <Box sx={styles.menu}>
-            {menuItems.map(({ path, label }, i) => (
-              <ScrollLink
-                activeClass="active"
-                to={path}
-                spy={true}
-                smooth={true}
-                offset={10}
-                duration={500}
-                key={i}
-              >
-                {label}
-              </ScrollLink>
-            ))}
+          {menuItems.map(({ path, label, submenu }, i) => (
+  <div key={i}>
+    <ScrollLink
+      activeClass="active"
+      to={path}
+      spy={true}
+      smooth={true}
+      offset={10}
+      duration={500}
+    >
+      {label}
+    </ScrollLink>
+    {submenu && submenu.length > 0 && (
+      <ul>
+        {submenu.map(({ path: subPath, label: subLabel }, j) => (
+          <li key={j}>
+            <ScrollLink
+              activeClass="active"
+              to={subPath}
+              spy={true}
+              smooth={true}
+              offset={10}
+              duration={500}
+            >
+              {subLabel}
+            </ScrollLink>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+))}
+
           </Box>
 
           <Box sx={styles.menuFooter}>
-            <Button variant="primary" sx={styles.button}>
-              Purchase Now
-            </Button>
+
           </Box>
         </Box>
       </Scrollbars>
@@ -72,7 +95,7 @@ const styles = {
     width: '26px',
 
     '@media screen and (min-width: 960px)': {
-      display: 'none',
+      display: 'flex',
     },
   },
 
@@ -80,6 +103,7 @@ const styles = {
     width: '100%',
     height: '100%',
     background: '#fff',
+
   },
 
   close: {
@@ -138,7 +162,29 @@ const styles = {
     py: '0',
     backgroundColor: 'black',
     color: '#fff',
+
   },
+  drawerButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    letterSpacing: '-0.16px',
+    borderRadius: '5px',
+    color: '#ffffff',
+    backgroundColor: 'black',
+    padding: '6.5px 24px',
+  },
+
+  buttonText: {
+    marginRight: '8px', // İstediğiniz boşluk değerini ayarlayabilirsiniz
+  },
+  icon: {
+    marginRight: "20px"
+  }
+
+
 };
 
 export default MobileDrawer;

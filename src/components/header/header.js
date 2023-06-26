@@ -5,10 +5,15 @@ import { Link as ScrollLink } from 'react-scroll';
 import Logo from 'components/logo';
 import { DrawerProvider } from 'contexts/drawer/drawer.provider';
 import MobileDrawer from './mobileDrawer';
-import menuItems from './header.data';
-import logoDark from 'assets/logo-dark.svg';
+import menuItems from './header.data2';
+import logoDark from 'assets/Voltmaster.svg';
 
 export default function Header({ className }) {
+
+  const handlePhoneNumberClick = () => {
+    window.location.href = 'tel:0880223000';
+  };
+
   return (
     <DrawerProvider>
       <header sx={styles.header} className={className}>
@@ -32,14 +37,9 @@ export default function Header({ className }) {
             ))}
           </Flex>
 
-          <Link
-            path="/"
-            ml={2}
-            label="Purchase Now"
-            sx={styles.headerBtn}
-            variant="buttons.primary"
-          />
 
+          <text sx={styles.phoneNumber}><a href="tel:+0880223000" sx={styles.number}>085 1307 601
+          </a></text>
           <MobileDrawer />
         </Container>
       </header>
@@ -110,4 +110,14 @@ const styles = {
       },
     },
   },
+  phoneNumber: {
+    fontSize: '19px',
+    fontWeight: 'bold',
+    color: '#000000',
+    mr: '10px',
+  },
+  number: {
+    textDecoration: "none",
+    color: "#02073E"
+  }
 };

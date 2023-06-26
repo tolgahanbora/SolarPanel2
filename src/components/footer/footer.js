@@ -3,7 +3,7 @@ import React from 'react';
 import { jsx, Box, Text, Container } from 'theme-ui';
 import { Link } from 'components/link';
 import Logo from 'components/logo';
-import logoLight from 'assets/logo-light.svg';
+import logoLight from 'assets/Voltmaster.svg';
 export default function Footer() {
   return (
     <Box as="footer" sx={styles.footer}>
@@ -25,7 +25,7 @@ export default function Footer() {
               mt: ['10px', null, null, null, null, '0'],
             }}
           >
-            Copyright by {new Date().getFullYear()} RedQ, Inc
+            Copyright by {new Date().getFullYear()} Tolgahan Bora, 
           </Text>
         </Box>
         <Box sx={styles.linksWrap}>

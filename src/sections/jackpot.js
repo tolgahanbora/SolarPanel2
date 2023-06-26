@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Flex, Image, Text, Heading } from 'theme-ui';
 import JackpotCard from 'components/cards/jackpot-card';
-import jackpotImage from 'assets/jackpot.png';
+import jackpotImage from 'assets/person-near-alternative-energy-plant.jpg';
 import jackpotImage1 from 'assets/jackpot-1-1.png';
 import jackpotImage2 from 'assets/jackpot-1-2.png';
 
@@ -10,14 +10,21 @@ const JACKPOT_DATA = [
     image: jackpotImage1,
     text:
       'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
-    heading: 'Smart Features',
+    heading: 'Deskundig en oprecht',
   },
   {
     image: jackpotImage2,
     text:
       'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
-    heading: 'Secure Contents',
+    heading: 'Beste aanbod',
   },
+  {
+    image: jackpotImage2,
+    text:
+      'Get your blood tests delivered at let home collect sample from the victory of the managments your blood tests.',
+    heading: 'Stralende installatiedag',
+  },
+  
 ];
 
 const Jackpot = () => {
@@ -31,7 +38,7 @@ const Jackpot = () => {
           <Box sx={styles.content}>
             <Box sx={styles.heading}>
               <Text as="span">Core features</Text>
-              <Heading as="h3">Smart Jackpots that you may love this</Heading>
+              <Heading as="h3">Voltmaster geeft Energie!</Heading>
             </Box>
             <Box sx={styles.jackpotCardBox}>
               {JACKPOT_DATA.map(({ image, heading, text }, index) => (
@@ -64,7 +71,9 @@ const styles = {
     img: {
       maxWidth: ['100%', null, null, null, null, null, 'none'],
       float: 'right',
+      borderRadius: '30%',
     },
+    
   },
   content: {
     flex: ['0 0 100%', null, null, null, null, '0 0 37.5%'],

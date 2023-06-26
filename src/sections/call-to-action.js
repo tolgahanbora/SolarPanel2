@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Container, Flex, Text, Heading, Image } from 'theme-ui';
 import { Link } from 'components/link';
 
-import callImage from 'assets/call-image.png';
+import callImage from 'assets/firstGif.gif';
 
 const CallToAction = () => {
   return (
@@ -25,7 +25,7 @@ const CallToAction = () => {
             </Link>
           </Box>
           <Box sx={styles.images}>
-            <Image src={callImage} alt="call image" />
+            <Image sx={{ borderRadius: '10%' }} src={callImage} alt="call image" />
           </Box>
         </Flex>
       </Container>
@@ -90,6 +90,8 @@ const styles = {
     },
   },
   images: {
+
     flex: ['0 0 100%', null, null, null, '0 0 61.5%'],
+   
   },
 };

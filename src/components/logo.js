@@ -9,10 +9,13 @@ export default function Logo({ image }) {
       sx={{
         variant: 'links.logo',
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'flex-start',
+        mr: 'auto',
+
       }}
     >
-      <Image src={image} alt="startup landing logo" />
+      <Image width="200px" 
+         src={image} alt="startup landing logo" />
     </Link>
   );
 }
